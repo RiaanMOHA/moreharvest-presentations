@@ -1,0 +1,157 @@
+.resume {
+  padding-top: 80px;
+}
+
+.resume-hero {
+  padding-top: var(--space-5xl);
+  padding-bottom: var(--space-4xl);
+  background: var(--color-bg-secondary);
+}
+
+.resume-cta {
+  margin-top: var(--space-xl);
+}
+
+.resume-content {
+  padding: var(--section-padding);
+}
+
+.resume-section {
+  margin-bottom: var(--space-4xl);
+}
+
+.resume-item {
+  margin-bottom: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+  border-bottom: var(--border-width) var(--border-style) var(--color-border-light);
+}
+
+.resume-item:last-child {
+  border-bottom: none;
+}
+
+.resume-item h3 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-primary);
+}
+
+.resume-meta {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+}
+
+.company {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.resume-item p {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.resume-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resume-list li {
+  padding: var(--space-sm) 0;
+  padding-left: var(--space-lg);
+  position: relative;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+}
+
+.resume-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2xl);
+}
+
+.skill-category h3 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-md);
+  color: var(--color-text-primary);
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-list li {
+  padding: var(--space-sm) 0;
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  border-bottom: var(--border-width) var(--border-style) var(--color-border-light);
+}
+
+.skill-list li:last-child {
+  border-bottom: none;
+}
+
+.contact-info p {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.contact-info a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  display: inline-block;
+  padding: var(--space-md) var(--space-xl);
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  border-radius: var(--border-radius-full);
+  transition: all var(--transition-base);
+  border: var(--border-width) var(--border-style) transparent;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-bg-primary);
+}
+
+.btn-primary:hover {
+  background: var(--color-accent-hover);
+  color: var(--color-bg-primary);
+}
+
+@media screen and (max-width: 750px) {
+  .resume-hero {
+    padding-top: var(--space-3xl);
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,209 @@
+/* 
+ * DESIGN SYSTEM - LOCKED, IMMUTABLE
+ * 
+ * This design system is MANDATORY and cannot be changed.
+ * All colors, typography, spacing, and layout tokens are defined here.
+ * 
+ * DO NOT:
+ * - Change colors
+ * - Add colors
+ * - Change fonts
+ * - Add fonts
+ * - Change spacing philosophy
+ * - Override typography
+ * - Introduce new visual tokens
+ * 
+ * YOU MAY:
+ * - Extend for components
+ * - Add GSAP hooks
+ * - Add utility wrappers
+ */
+
+:root {
+  /* Colors - LOCKED */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F5F5F5;
+  --color-text-primary: #18191A;
+  --color-text-secondary: #4F4F4F;
+  --color-text-tertiary: #8F8F8F;
+  --color-accent: #194567;
+  --color-accent-hover: #0F2D3F;
+  --color-border: #E7E7E7;
+  --color-border-light: #F0F0F0;
+  
+  /* Typography - LOCKED */
+  --font-primary: 'EB Garamond', serif;
+  --font-secondary: 'Madefor Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 32px;
+  --font-size-3xl: 48px;
+  --font-size-4xl: 64px;
+  
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.4;
+  --line-height-relaxed: 1.6;
+  
+  --letter-spacing-tight: -0.03em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.05em;
+  
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  
+  /* Spacing - LOCKED */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+  --space-5xl: 128px;
+  
+  /* Layout - LOCKED */
+  --container-max-width: 1200px;
+  --container-padding: var(--space-lg);
+  --section-padding: var(--space-4xl) var(--container-padding);
+  
+  /* Breakpoints - LOCKED */
+  --breakpoint-sm: 320px;
+  --breakpoint-md: 750px;
+  --breakpoint-lg: 1000px;
+  --breakpoint-xl: 1200px;
+  
+  /* Transitions - LOCKED */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.4s ease;
+  
+  /* Borders - LOCKED */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+  --border-radius-full: 100px;
+  
+  --border-width: 1px;
+  --border-style: solid;
+}
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-tight);
+  color: var(--color-text-primary);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+}
+
+h4 {
+  font-size: var(--font-size-xl);
+}
+
+h5 {
+  font-size: var(--font-size-lg);
+}
+
+h6 {
+  font-size: var(--font-size-base);
+}
+
+p {
+  margin-bottom: var(--space-md);
+  line-height: var(--line-height-relaxed);
+}
+
+a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+/* Layout Utilities */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.section {
+  padding: var(--section-padding);
+}
+
+/* Responsive */
+@media screen and (max-width: 1000px) {
+  :root {
+    --font-size-4xl: 48px;
+    --font-size-3xl: 40px;
+    --font-size-2xl: 28px;
+    --section-padding: var(--space-3xl) var(--container-padding);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  :root {
+    --font-size-4xl: 40px;
+    --font-size-3xl: 32px;
+    --font-size-2xl: 24px;
+    --font-size-xl: 20px;
+    --container-padding: var(--space-md);
+    --section-padding: var(--space-2xl) var(--container-padding);
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

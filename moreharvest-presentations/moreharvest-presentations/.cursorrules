@@ -1,0 +1,230 @@
+# MoreHarvest Brand Design System - Cursor Rules
+
+## CRITICAL RESTRICTIONS
+- **NEVER use CSS gradients** - Use solid colors only
+- **NEVER use localStorage or sessionStorage** - Use React state only
+- **ALWAYS left-align content** - No center or right alignment
+- **8px base unit** - All spacing must be multiples of 8px
+
+## COLOR SYSTEM (Light Mode Only)
+
+### Brand Colors
+brand-amber: #FBB931 (Primary)
+brand-orange: #FF9424 (Secondary)
+
+### Interaction Colors
+error: #D03131
+success: #19B64E
+disabled: #8E8F8F
+hyperlink: #1282C0
+
+### Base Colors
+black: #1E1F20
+white: #FEFEFE
+background: #F9F9F9
+header: #EDEEF1
+
+### Neutral Scale (50-950)
+50: #FFFFFF
+100: #EDEEF1
+200: #D8DBDF
+300: #B6BAC3
+400: #8E95A2
+500: #6B7280
+600: #5B616E
+700: #4A4E5A
+800: #40444C
+900: #383A42
+950: #25272C
+
+## TYPOGRAPHY
+
+### Font Families
+- Headings & Labels: REM (Regular 400, Semibold 600)
+- Body (English): Noto Sans JP (Regular 400, Bold 700)
+- Body (Chinese Traditional): Noto Sans TC
+- Body (Chinese Simplified): Noto Sans SC
+
+### Font Sizes
+H1: 39.8px / 125% line height
+H2: 33.2px / 125% line height
+H3: 27.6px / 125% line height
+H4: 23px / 125% line height
+H5: 19.2px / 125% line height
+Body Large: 19.2px / 150% line height
+Body Medium: 16px / 150% line height
+Body Small: 13.3px / 150% line height
+Body XS: 11.1px / 150% line height
+Label Large: 16px / 125% line height
+Label Medium: 14px / 125% line height
+
+### Letter Spacing
+All text: 0.25%
+
+## SPACING SYSTEM (8px base unit)
+0: 0px
+1: 4px (0.5 unit)
+2: 8px (1 unit)
+3: 12px (1.5 units)
+4: 16px (2 units)
+5: 20px (2.5 units)
+6: 24px (3 units)
+7: 28px (3.5 units)
+8: 32px (4 units)
+9: 36px (4.5 units)
+10: 40px (5 units)
+12: 48px (6 units)
+16: 64px (8 units)
+20: 80px (10 units)
+24: 96px (12 units)
+32: 128px (16 units)
+
+### Responsive Spacing
+Mobile (390px):
+- xxs: 4px, xs: 8px, s: 12px, md: 16px, l: 24px, xl: 32px, xxl: 40px
+
+Tablet (834px):
+- xxs: 8px, xs: 12px, s: 16px, md: 24px, l: 32px, xl: 40px, xxl: 48px
+
+Desktop (1440px+):
+- xxs: 8px, xs: 16px, s: 24px, md: 32px, l: 40px, xl: 48px, xxl: 64px
+
+## GRID SYSTEM
+
+Desktop (1440px+): 12 columns, 32px gutters, 160px margins, 8px row grid
+Tablet (834px): 8 columns, 16px gutters, 32px margins, 8px row grid
+Mobile (390px): 4 columns, 16px gutters, 16px margins, 8px row grid
+
+## LAYOUT PRINCIPLES
+1. Always left-align text and content
+2. Use prose paragraphs, avoid bullet lists unless explicitly needed
+3. Slide structure: Section header, slide number (bottom right), main content (left-aligned)
+4. Generous white space - don't crowd slides
+5. Maximum 1 concept per slide
+
+## SLIDE TEMPLATES
+
+### Title Slide
+- Large H1 (centered is OK here)
+- Subtitle below
+- Brand icon optional
+- Minimal decoration
+
+### Content Slide (Text Only)
+- H3 headline (left-aligned)
+- Body text in prose (left-aligned)
+- Optional small data visualization
+
+### Content Slide (Text + Image)
+- Left column: H3 + prose (60% width)
+- Right column: Image/chart (40% width)
+
+### Data Slide
+- H3 headline
+- Large numbers with context
+- Simple chart only (no complex visualizations)
+
+### Section Divider
+- Section letter + number (large)
+- Section title
+- Minimal, clean
+
+### Index/Table of Contents
+- Numbered list (exception to no-bullets rule)
+- Clean hierarchy
+- Page numbers right-aligned
+
+## ANIMATION PRINCIPLES (GSAP)
+1. Slide transitions: Fade + subtle slide (not dramatic)
+2. Content reveal: Stagger children with 0.1s delay
+3. Highlight animations: Scale pulse on key metrics (1.05x scale)
+4. Duration: 0.4-0.6s for most animations
+5. Easing: power2.out for natural feel
+
+### Example Patterns
+Slide entrance: opacity 0→1, y: 20→0, duration: 0.5s
+Highlight: scale 1→1.05→1, duration: 0.3s, repeat once
+
+## LANGUAGE-SPECIFIC RULES
+
+### English
+- Headings: REM font
+- Body: Noto Sans JP font
+
+### Chinese (Traditional & Simplified)
+- All text: Noto Sans TC or Noto Sans SC
+- Same sizes and spacing as English
+
+## COMPONENT PATTERNS
+
+### Slide Container
+- min-h-screen w-full bg-base-white p-8 md:p-16
+- max-w-[1440px] mx-auto for content
+- Slide number: absolute bottht-8
+
+### Section Header
+- H2 with semibold weight
+- 2px accent line below (w-16 bg-brand-amber mt-4)
+- mb-8 spacing
+
+## PDF EXPORT RULES
+- Remove all navigation UI
+- Hide slide controls
+- Ensure page breaks between slides
+- Use print-optimized styles
+- A4 landscape format
+- No margins
+
+## ANTI-PATTERNS (NEVER DO THIS)
+❌ CSS gradients anywhere
+❌ localStorage, sessionStorage, IndexedDB, or any browser storage
+❌ Center-aligned body text (except title slide)
+❌ Bullet points in main content (use prose)
+❌ More than 1 main idea per slide
+❌ Crowded layouts with insufficient white space
+❌ Complex charts or visualizations
+❌ Animations longer than 0.6s
+❌ Hard-coded text without i18n
+❌ Arbitrary Tailwind values (use design tokens)
+❌ Right-aligned text (except page numbers)
+
+## FILE NAMING CONVENTIONS
+- Components: PascalCase.tsx
+- Utilities: camelCase.ts
+- API routes: kebab-case/route.ts
+- Slide types: slide-type-name.tsx
+
+## ACCESSIBILITY REQUIREMENTS
+- Semantic HTML (h1-h6, section, article, naimages
+- WCAG AA color contrast minimum
+- Keyboard navigation for all controls
+- Focus visible states
+- Screen reader friendly
+
+## TAILWIND USAGE
+- Use design tokens as Tailwind classes
+- Define custom classes in tailwind.config.ts
+- Avoid arbitrary values like w-[127px]
+- Use spacing scale: p-4, p-6, p-8 etc.
+- Use color tokens: bg-brand-amber, text-neutral-800
+
+## STATE MANAGEMENT
+- Use React useState for in-memory state
+- Use useReducer for complex state
+- NEVER persist to localStorage
+- Pass data via props or context
+- API calls for server-side persistence if needed
+
+## MUST-FOLLOW CHECKLIST
+✅ All spacing is 8px multiples
+✅ All text is left-aligned (except title slide & page numbers)
+✅ No gradients anywhere
+✅ No browser storage APIs
+✅ Using REM for headings
+✅ Using Noto Sans for body
+✅ 150% line height for body text
+✅ 125% line height for headings
+✅ 0.25% letter spacing
+✅ GSAP animations under 0.6s
+✅ One concept per slide
+✅ Generous white space

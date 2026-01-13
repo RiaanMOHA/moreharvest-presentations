@@ -1,0 +1,111 @@
+.about {
+  padding-top: 80px;
+}
+
+.about-hero {
+  padding-top: var(--space-5xl);
+  padding-bottom: var(--space-4xl);
+  background: var(--color-bg-secondary);
+}
+
+.page-title {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--space-lg);
+}
+
+.hero-description {
+  font-size: var(--font-size-xl);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+.about-section {
+  padding: var(--section-padding);
+}
+
+.section-content {
+  max-width: 800px;
+}
+
+.section-content p {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.expertise-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2xl);
+}
+
+.expertise-item h3 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-primary);
+}
+
+.expertise-item p {
+  color: var(--color-text-secondary);
+}
+
+.availability-section {
+  background: var(--color-bg-secondary);
+  text-align: center;
+}
+
+.availability-text {
+  font-size: var(--font-size-xl);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.location-text {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+.contact-cta {
+  margin-top: var(--space-xl);
+}
+
+.btn {
+  display: inline-block;
+  padding: var(--space-md) var(--space-xl);
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  border-radius: var(--border-radius-full);
+  transition: all var(--transition-base);
+  border: var(--border-width) var(--border-style) transparent;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-bg-primary);
+}
+
+.btn-primary:hover {
+  background: var(--color-accent-hover);
+  color: var(--color-bg-primary);
+}
+
+@media screen and (max-width: 1000px) {
+  .expertise-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .about-hero {
+    padding-top: var(--space-3xl);
+  }
+
+  .page-title {
+    font-size: var(--font-size-3xl);
+  }
+}
