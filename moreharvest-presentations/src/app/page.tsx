@@ -111,7 +111,7 @@ export default function Home() {
       <div className="max-w-6xl mx-auto p-8">
         <div className="mb-8">
           <Label htmlFor="language" className="text-base font-semibold mb-2 block">Language</Label>
-          <Select value={language} onValueChange={(val) => setLanguage(val as Language)}>
+          <Select value={language} onValueConChange={(val) => setLanguage(val as Language)}>
             <SelectTrigger className="w-[200px]">
               <SelectValue />
             </SelectTrigger>
@@ -128,7 +128,7 @@ export default function Home() {
           <Textarea
             id="content"
             placeholder="Paste raw text, copy from Google Slides, or upload a PDF..."
-            value={content}hange={(e) => setContent(e.target.value)}
+            value={content}onChange={(e) => setContent(e.target.value)}
             className="min-h-[200px] mb-4"
             disabled={loading}
           />
@@ -151,7 +151,7 @@ export default function Home() {
                   id="feedback"
                   placeholder="E.g., 'Make the title shorter' or 'Add more data about Tokyo'"
                   value={feedback}
-                  onChange={(e) => setFeedback(e.target.value)}
+                  onConChange={(e) => setFeedback(e.target.value)}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' && !e.shiftKey) {
                       e.preventDefault()
